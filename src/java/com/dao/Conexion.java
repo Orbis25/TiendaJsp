@@ -15,13 +15,16 @@ import java.sql.SQLException;
  */
 public class Conexion {
     
+    //arreglar
    protected Connection con = null;
-   private final String url = "jdbc:mysql://localhost:3306/tienda?user=root&password=";
+   private final String url = "jdbc:mysql://localhost:3306/tienda";
+   private final String user ="root";
+   private final String pass = "";
    private final String clase = "com.mysql.jdbc.Driver";      
     public Connection getConnection(){
       try{
           Class.forName(clase);
-          con = DriverManager.getConnection(url);
+          con = DriverManager.getConnection(url,user,pass);
           System.out.println("conecxion satisfactoria");
           
       }catch(Exception e){

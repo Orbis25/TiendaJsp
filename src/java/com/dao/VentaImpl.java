@@ -135,7 +135,7 @@ public class VentaImpl extends Conexion implements VentaInter{
             props.setProperty("mail.smtp.host", "smtp.gmail.com");
             props.setProperty("mail.smtp.starttls.enable", "true");
             props.setProperty("mail.smtp.port", "587");
-            props.setProperty("mail.smtp.user", "orbisalonzo25@gmail.com");
+            props.setProperty("mail.smtp.user", "orbisalonzo@gmail.com");
             props.setProperty("mail.smtp.auth", "true");
             
             String header = "Gracias por comprar en TechShop";

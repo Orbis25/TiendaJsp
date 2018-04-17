@@ -75,7 +75,7 @@ public class UserImpl extends Conexion implements UserInter {
             props.setProperty("mail.smtp.host", "smtp.gmail.com");
             props.setProperty("mail.smtp.starttls.enable", "true");
             props.setProperty("mail.smtp.port", "587");
-            props.setProperty("mail.smtp.user", "orbisalonzo25@gmail.com");
+            props.setProperty("mail.smtp.user", "orbisalonzo@gmail.com");
             props.setProperty("mail.smtp.auth", "true");
             
             String header = "Bienvenido a TechShop";
@@ -188,10 +188,11 @@ public class UserImpl extends Conexion implements UserInter {
         try{
             String desencriptado=DigestUtils.md5Hex(user.getPass());
             Connection con = this.getConnection();
-            String sql = "select id_usuario,nombre,apellido,correo,password from usuario where correo = ? and password = ?";
+            String sql = "select id_usuario,nombre,apellido,correo,password from usuario where correo = ? and password = ? and confirmacion = ?";
             PreparedStatement ps =  con.prepareStatement(sql);
             ps.setString(1, user.getCorreo());
             ps.setString(2, desencriptado);
+            ps.setInt(3,1);
             ResultSet rs = ps.executeQuery();
             String c = "";
             String p = "";

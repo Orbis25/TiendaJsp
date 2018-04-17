@@ -55,7 +55,7 @@ public class UserL extends HttpServlet {
         UserImpl daoUser = new UserImpl();
         AdminImpl daoadmin = new AdminImpl();
         if(daoUser.login(user)){
-             //creando session
+                //creando session
                 HttpSession sesionOk = request.getSession();
                 //asignando un usuario  
                 sesionOk.setAttribute("usuario", user);

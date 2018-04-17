@@ -9,6 +9,7 @@ import com.Bean.Producto;
 import com.Bean.Venta;
 import com.dao.ProductoImpl;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -68,9 +69,12 @@ public class Car extends HttpServlet {
         int Cdisponible = Integer.parseInt(request.getParameter("c_disponible"));
         
         Venta venta = new Venta(Integer.parseInt(request.getParameter("id")),p, cantidad);
+        
         double subTotal = p.getPrecio() * venta.getCantidad_producto();
+        
          int indice = Exist(id, carrito);
-        if(indice == -1){
+       
+         if(indice == -1){
             carrito.add(venta);
         }else{
             cantidad = carrito.get(indice).getCantidad_producto() + Cvieja;
@@ -78,8 +82,12 @@ public class Car extends HttpServlet {
             carrito.get(indice).setCantidad_producto(cantidad);
             }
         }
+        
         sesion.setAttribute("carrito", carrito);
+                request.setAttribute("car", "Producto añadido con exito");
+
         request.getRequestDispatcher("product-page.jsp").forward(request, response);
+        
     }
     
     public int Exist(int product_id,ArrayList<Venta> carrito){

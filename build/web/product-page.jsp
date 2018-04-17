@@ -290,6 +290,7 @@ usu = (User) sesionOK.getAttribute("usuario");
 			<ul class="breadcrumb">
 				<li><a href="#">Home</a></li>
 				<li><a href="#">Products</a></li>
+                                
 			</ul>
 		</div>
 	</div>
@@ -299,6 +300,20 @@ usu = (User) sesionOK.getAttribute("usuario");
 	<div class="section">
 		<!-- container -->
 		<div class="container">
+                    <%if(request.getAttribute("car")!=null){
+                                %>
+                                
+                                
+                                
+                                <div class=" alert alert-success text-center" role="alert">
+                                <span class="fa fa-shopping-bag"></span> <strong><%out.print(request.getAttribute("car"));%></strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+
+                                
+                                <%}%>
 			<!-- row -->
 			<div class="row"> <%String id_p = "";%>
 				<!--  Product Details -->
