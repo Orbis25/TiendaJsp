@@ -108,6 +108,7 @@ public class Producto {
    private Categoria id_fkcategoria;
    private Ram id_fkram;
    private String modelo_pc;
+   
 
     public String getCantidad() {
         return cantidad;

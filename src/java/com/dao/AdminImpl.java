@@ -10,6 +10,7 @@ import com.Bean.Producto;
 import com.Bean.Ram;
 import com.Bean.Sistema;
 import com.Interfaces.AdminInter;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -74,9 +75,7 @@ public class AdminImpl extends Conexion implements AdminInter {
             Marca m = new Marca();
             Categoria c = new Categoria();
             Ram ram = new Ram();
-            Disco d = new Disco();
-            
-            
+            Disco d = new Disco();        
             p = producto.getId_fkprocesador();
             m = producto.getId_fkmarca();
             c = producto.getId_fkcategoria();
@@ -95,20 +94,13 @@ public class AdminImpl extends Conexion implements AdminInter {
               ps.setString(10,producto.getDescripcion());
               ps.setString(11,producto.getModelo_pc());
               ps.setString(12,producto.getDisponibilidad());
-              ps.executeUpdate();
-   
-             
-        
-            
+              ps.executeUpdate();            
         }catch(Exception e){
-             
             System.out.println("error en registrar "+e);
         }finally{
         this.cerrar();
         }
-          
     }
-
     @Override
     public void deleteProducts(Producto producto) {
         

@@ -60,7 +60,7 @@ usu = (User) sesionOK.getAttribute("usuario");
 		<div id="top-header">
 			<div class="container">
 				<div class="pull-left">
-					<span>Bienvenido a Tech-Shop!</span>
+					<span>Bienvenido a Shop-Geek!</span>
 				</div>
 				<div class="pull-right">
 					<ul class="header-top-links">
@@ -85,7 +85,7 @@ usu = (User) sesionOK.getAttribute("usuario");
 					<div class="header-logo">
 						<a class="logo" href="#">
 						
-							<h2> <span><img src="img/biglaptop.png" alt="" class="logoimg "></span><span class="logo">Tech</span>-Shop</h2>
+                                                   <h2> <a href="index.jsp"> <span><img src="img/logo 1.png" width="150" alt="" class="logoimg "></span></a></h2>
 						</a>
 					</div>
 					
@@ -212,10 +212,10 @@ usu = (User) sesionOK.getAttribute("usuario");
 			<div id="responsive-nav">
 				<!-- category nav -->
 				<div class="category-nav show-on-click">
-					<span class="category-header">Categorias<i class="fa fa-list"></i></span>
+					<span class="category-header">Menu<i class="fa fa-list"></i></span>
 					<ul class="category-list">
 						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Laptops , pc y mas <i class="fa fa-angle-right"></i></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Nuestras Marcas <i class="fa fa-angle-right"></i></a>
 							<div class="custom-menu">
 								<div class="row">
                                                                     <div class="col-md-6">
@@ -433,57 +433,38 @@ usu = (User) sesionOK.getAttribute("usuario");
 						<div class="footer-logo">
 						<a class="logo" href="#">
 						
-							<h2> <span><img src="img/biglaptop.png" alt="" class="logoimg "></span><span class="logo">Tech</span>-Shop</h2>
+							<h2> <a href="index.jsp"> <span><img src="img/logo 1.png" width="150" alt="" class="logoimg "></span></a></h2>
 						</a>
 						</div>
 						<!-- /footer logo -->
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+						<p>ShopGeek tu tienda online, Brindando los mejores Productos Tecnológicos Para Nuestros Clientes.</p>
 
-						<!-- footer social -->
-						<ul class="footer-social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-						</ul>
-						<!-- /footer social -->
 					</div>
 				</div>
-				<!-- /footer widget -->
-
+				<div class="col-md-3 col-sm-6 col-xs-6"></div>
 				<!-- footer widget -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Mi Cuenta</h3>
+						<h3 class="footer-header">Informaciones</h3>
 						<ul class="list-links">
-							<li><a href="#">Mi Cuenta</a></li>
+							
+                                                </ul> <br>
+                                                <ul class="list-links">
+                                                         <%if(sesionOK.getAttribute("usuario")==null){
+                                                                %>
+                                                         <h3 class="footer-header">Mi Cuenta</h3>
 							<li><a href="Login.jsp">Login</a></li>
 						</ul>
-					</div>
-				</div>
-				<!-- /footer widget -->
-
-				<div class="clearfix visible-sm visible-xs"></div>
-
-				<!-- footer widget -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Servicios</h3>
-						<ul class="list-links">
-							<li><a href="#">Sobre Nosotros</a></li>
-							<li><a href="#">Envio y Devolucion</a></li>
-							<li><a href="#">Guia de envio</a></li>
-							<li><a href="#">FAQ</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer widget -->
-
-				<!-- footer subscribe -->
-				
-				<!-- /footer subscribe -->
+                                                        <%}
+                                                        %></div>
+                                                        <h1>Desarolladores</h1>
+                                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                                    <img src="img/carlitos.jpg" class="dev" width="50" height="50" alt="carlitos"/>
+                                                    <span>Carlos Montero Q.</span><br><br>
+                                                    <img src="img/orbis.jpg" class="dev" width="50" height="50" alt="carlitos"/>
+                                                     <span>Orbis Alonzo G.</span>
+						</div>      
+			
 			</div>
 			<!-- /row -->
 			<hr>
@@ -493,7 +474,7 @@ usu = (User) sesionOK.getAttribute("usuario");
 					<!-- footer copyright -->
 					<div class="footer-copyright">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;<script>document.write(new Date().getFullYear());</script> Orbisalonzo@gmail.com <i class="fa fa-facebook" aria-hidden="true"></i></a>
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> ShopGeek.com
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</div>
 					<!-- /footer copyright -->

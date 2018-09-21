@@ -4,6 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+bg-nav{
+    background: #f95959;
+}
+
 body {
     background-color: #f8f8f8;
 }
@@ -57,12 +61,12 @@ body {
 }
 
 .navbar-top-links>li>a {
-    color: #999;
+    color: #fff;
 }
 
 .navbar-top-links>li>a:hover, .navbar-top-links>li>a:focus, .navbar-top-links>.open>a, .navbar-top-links>.open>a:hover, .navbar-top-links>.open>a:focus {
     color: #fff;
-    background-color: #222;
+    background-color: #f95959;
 }
 
 .navbar-top-links .dropdown-menu li {

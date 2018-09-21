@@ -37,7 +37,8 @@ public class VentaC extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+                            String prd = request.getParameter("prd");
+
             if(request.getParameter("accion").equals("User")){
                 HttpSession sesion = request.getSession();
               int cantidad = Integer.parseInt(request.getParameter("cantidad_v"));
@@ -52,10 +53,9 @@ public class VentaC extends HttpServlet {
               ,request.getParameter("ftelefono"));
              
                 ArrayList<Venta> lista = (ArrayList<Venta>) sesion.getAttribute("carrito");
-              
                 VentaImpl venta = new VentaImpl();
                 if(venta.insertSaleUser(v,lista)){
-                    if(venta.emailSale(v)){;
+                    if(venta.emailSale(v , prd) ){;
                     HttpSession sesionOk = request.getSession();
                     request.getSession().removeAttribute("carrito");
                     sesionOk.isNew();
@@ -83,7 +83,7 @@ public class VentaC extends HttpServlet {
                  if(venta.queryFK()){
                     if(venta.insertSaleNoUser(v,lista)){
                    
-                    if(venta.emailSale(v)){
+                    if(venta.emailSale(v , prd)){
                     HttpSession sesionOk = request.getSession();
                     request.getSession().removeAttribute("carrito");
                     sesionOk.isNew();

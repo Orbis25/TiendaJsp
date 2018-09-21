@@ -50,7 +50,7 @@ public class TemplateEmail {
 "			#emailBody{background-color:#FFFFFF;}" +
 "			#emailFooter{background-color:#E1E1E1;}" +
 "			.nestedContainer{background-color:#F8F8F8; border:1px solid #CCCCCC;}" +
-"			.emailButton{background-color:#205478; border-collapse:separate;}" +
+"			.emailButton{background-color:#f95959; border-collapse:separate;}" +
 "			.buttonContent{color:#FFFFFF; font-family:Helvetica; font-size:18px; font-weight:bold; line-height:100%; padding:15px; text-align:center;}" +
 "			.buttonContent a{color:#FFFFFF; display:block; text-decoration:none!important; border:0!important;}" +
 "			.emailCalendar{background-color:#FFFFFF; border:1px solid #CCCCCC;}" +
@@ -190,7 +190,7 @@ public class TemplateEmail {
 "							<tr>" +
 "								<td align='center' valign='top'>" +
 "									" +
-"									<table border='0' cellpadding='0' cellspacing='0' width='100%' style='color:#FFFFFF;' bgcolor='#3498db'>" +
+"									<table border='0' cellpadding='0' cellspacing='0' width='100%' style='color:#FFFFFF;' bgcolor='#f95959'>" +
 "										<tr>" +
 "											<td align='center' valign='top'>" +
 "												" +
@@ -202,7 +202,7 @@ public class TemplateEmail {
 "															<table border='0' cellpadding='30' cellspacing='0' width='100%'>" +
 "																<tr>" +
 "																	<td align='center' valign='top' class='textContent'>" +
-"																		<h1 style='color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;'>Gracias por registrarte en TechShop <span class='fa fa-shopping-cart'> </span></h1>" +
+"																		<h1 style='color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;'>Gracias por registrarte en ShopGeek  <span class='fa fa-shopping-cart'> </span></h1>" +
 "																		<div style='text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;'>Solo tienes que darle click el siguiente boton y estaras listo para loguearte y hacer tus compras </div>" +
 "																	</td>" +
 "																</tr>" +
@@ -260,7 +260,7 @@ public class TemplateEmail {
 "														<td style='padding-top:0;' align='center' valign='top' width='500' class='flexibleContainerCell'>" +
 "" +
 "															<!-- CONTENT TABLE // -->" +
-"															<table border='0' cellpadding='0' cellspacing='0' width='50%' class='emailButton' style='background-color: #3498DB;'>" +
+"															<table border='0' cellpadding='0' cellspacing='0' width='50%' class='emailButton' style='background-color: #f95959;'>" +
 "																<tr>" +
 "																	<td align='center' valign='middle' class='buttonContent' style='padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;'>" +
 "																		<a style='color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;'";}

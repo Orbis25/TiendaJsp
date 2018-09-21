@@ -80,8 +80,6 @@ public class VentaImpl extends Conexion implements VentaInter{
         }finally{
             this.cerrar();
         }
-        
-
          return o;
     }
 
@@ -126,7 +124,7 @@ public class VentaImpl extends Conexion implements VentaInter{
     
     
     @Override
-    public boolean emailSale(Venta venta) {
+    public boolean emailSale(Venta venta , String products) {
             boolean result = false;        
         try
         {
@@ -135,10 +133,10 @@ public class VentaImpl extends Conexion implements VentaInter{
             props.setProperty("mail.smtp.host", "smtp.gmail.com");
             props.setProperty("mail.smtp.starttls.enable", "true");
             props.setProperty("mail.smtp.port", "587");
-            props.setProperty("mail.smtp.user", "orbisalonzo@gmail.com");
+            props.setProperty("mail.smtp.user", "orbisalonzo25@gmail.com");
             props.setProperty("mail.smtp.auth", "true");
             
-            String header = "Gracias por comprar en TechShop";
+            String header = "Gracias por comprar en Shop-Geek";
  
             // Preparamos la sesion
             Session session = Session.getDefaultInstance(props);
@@ -195,19 +193,19 @@ public class VentaImpl extends Conexion implements VentaInter{
 "			#emailBody{background-color:#FFFFFF;}" +
 "			#emailFooter{background-color:#E1E1E1;}" +
 "			.nestedContainer{background-color:#F8F8F8; border:1px solid #CCCCCC;}" +
-"			.emailButton{background-color:#205478; border-collapse:separate;}" +
+"			.emailButton{background-color:#ffffff; border-collapse:separate;}" +
 "			.buttonContent{color:#FFFFFF; font-family:Helvetica; font-size:18px; font-weight:bold; line-height:100%; padding:15px; text-align:center;}" +
 "			.buttonContent a{color:#FFFFFF; display:block; text-decoration:none!important; border:0!important;}" +
 "			.emailCalendar{background-color:#FFFFFF; border:1px solid #CCCCCC;}" +
 "			.emailCalendarMonth{background-color:#205478; color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; padding-top:10px; padding-bottom:10px; text-align:center;}" +
-"			.emailCalendarDay{color:#205478; font-family:Helvetica, Arial, sans-serif; font-size:60px; font-weight:bold; line-height:100%; padding-top:20px; padding-bottom:20px; text-align:center;}" +
+"			.emailCalendarDay{color:#ffffff; font-family:Helvetica, Arial, sans-serif; font-size:60px; font-weight:bold; line-height:100%; padding-top:20px; padding-bottom:20px; text-align:center;}" +
 "			.imageContentText {margin-top: 10px;line-height:0;}" +
 "			.imageContentText a {line-height:0;}" +
 "			#invisibleIntroduction {display:none !important;} /* Removing the introduction text from the view */" +
 "" +
 "			/*FRAMEWORK HACKS & OVERRIDES */" +
 "			span[class=ios-color-hack] a {color:#275100!important;text-decoration:none!important;} /* Remove all link colors in IOS (below are duplicates based on the color preference) */" +
-"			span[class=ios-color-hack2] a {color:#205478!important;text-decoration:none!important;}" +
+"			span[class=ios-color-hack2] a {color:#ffffff!important;text-decoration:none!important;}" +
 "			span[class=ios-color-hack3] a {color:#8B8B8B!important;text-decoration:none!important;}" +
 "			" +
 "			.a[href^='tel'], a[href^='sms'] {text-decoration:none!important;color:#606060!important;pointer-events:none!important;cursor:default!important;}" +
@@ -335,7 +333,7 @@ public class VentaImpl extends Conexion implements VentaInter{
 "							<tr>" +
 "								<td align='center' valign='top'>" +
 "									" +
-"									<table border='0' cellpadding='0' cellspacing='0' width='100%' style='color:#FFFFFF;' bgcolor='#3498db'>" +
+"									<table border='0' cellpadding='0' cellspacing='0' width='100%' style='color:#FFFFFF;' bgcolor='#f95959'>" +
 "										<tr>" +
 "											<td align='center' valign='top'>" +
 "												" +
@@ -347,8 +345,8 @@ public class VentaImpl extends Conexion implements VentaInter{
 "															<table border='0' cellpadding='30' cellspacing='0' width='100%'>" +
 "																<tr>" +
 "																	<td align='center' valign='top' class='textContent'>" +
-"																		<h1 style='color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;'>Gracias por comprar en TechShop <span class='fa fa-shopping-cart'> </span></h1>" +
-                              "                                                                    <h2 style='text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:23px;margin-bottom:10px;color:#205478;line-height:135%;'>Codigo Factura: "+noFactura+" </h2>"+
+"																		<h1 style='color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;'>Gracias por comprar en ShopGeek <span class='fa fa-shopping-cart'> </span></h1>" +
+                              "                                                                    <h2 style='text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:23px;margin-bottom:10px;color:#ffffff;line-height:135%;'>Codigo Factura: "+noFactura+" </h2>"+
 "																		<div style='text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;'>Porfavor guarde la factura y presentela al momento de entregarle su pedido. </div>" +
 "																	</td>" +
 "																</tr>" +
@@ -379,7 +377,7 @@ public class VentaImpl extends Conexion implements VentaInter{
 "" +
                                                                       " <div class=\"row justify-content-around\">\n" +
         "                                                            <div class=\"col-4 \">\n" +
-        "\n" +
+        "\n" +                                                       
         "                                                        <label class=\"label\">Nombre: <span>"+venta.getUser().getNombre()+"</span></label><br><br>\n" +
         "                                                        <label class=\"label\">Telefono: <span>"+venta.getNumero_t()+"</span></label><br><br>\n" +
         "                                                        <label class=\"label\">Pais: <span>"+venta.getPais()+"</span></label><br><br>\n" +
@@ -392,6 +390,7 @@ public class VentaImpl extends Conexion implements VentaInter{
         "                                                        <label class=\"label\"><strong>Total:</strong><span>"+venta.getTotal_pagado()+"</span></label><br><br>\n" +
         "                                                            </div>\n" +
         "                                                        </div>"+
+                    
                     
 "														" +
 "															<!-- // CONTENT TABLE -->" +
@@ -422,7 +421,7 @@ public class VentaImpl extends Conexion implements VentaInter{
 "														<td style='padding-top:0;' align='center' valign='top' width='500' class='flexibleContainerCell'>" +
 "" +
 "															<!-- CONTENT TABLE // -->" +
-"															<table border='0' cellpadding='0' cellspacing='0' width='50%' class='emailButton' style='background-color: #3498DB;'>" +
+"															<table border='0' cellpadding='0' cellspacing='0' width='50%' class='emailButton' style='background-color: #f95959;'>" +
 "																<tr>" +
 "																	<td align='center' valign='middle' class='buttonContent' style='padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;'>" +
 																		"<a style=\"color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;\" href=\"#\"\n" +

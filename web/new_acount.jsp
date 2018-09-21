@@ -38,6 +38,7 @@
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
                 <form class="login100-form validate-form form-group" method="POST" action="UserS">
                     <span class="login100-form-title p-b-49">
+                        <h2> <span><img src="img/logo 1.png" width="150" alt="" class="logoimg mb-2"></span></h2>
                         Registro
                     </span>
 
@@ -53,7 +54,7 @@
                         <div class="col-0.5 mt-1" id="error2" class=""></div>
                     </div>
                     
-                    <button type="submit" class="btn btn-outline-primary btn-block" id="btn" >Registrarse</button>
+                    <button type="submit" class="btn  btn-block" style="background: #f95959; color: #FFF"  id="btn" >Registrarse</button>
                      <div class="row justify-content-center ">
                     <div class="col-5 mt-4">
                     <a href="Login.jsp" class="text-center">Tienes Cuenta?</a>

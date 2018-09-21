@@ -25,7 +25,7 @@ usu = (User) sesionOK.getAttribute("usuario");
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Tech-Shop</title>
+	<title>Shop-Geek</title>
 	
 
 	<!-- Google font -->
@@ -48,6 +48,7 @@ usu = (User) sesionOK.getAttribute("usuario");
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 </head>
@@ -59,7 +60,7 @@ usu = (User) sesionOK.getAttribute("usuario");
 		<div id="top-header">
 			<div class="container">
 				<div class="pull-left">
-					<span>Bienvenido a Tech-Shop!</span>
+					<span>Bienvenido a Shop-Geek!</span>
 				</div>
 				<div class="pull-right">
 					<ul class="header-top-links">
@@ -84,7 +85,7 @@ usu = (User) sesionOK.getAttribute("usuario");
 					<div class="header-logo">
 						<a class="logo" href="#">
 						
-							<h2> <span><img src="img/biglaptop.png" alt="" class="logoimg "></span><span class="logo">Tech</span>-Shop</h2>
+							<h2> <a href="index.jsp"> <span><img src="img/logo 1.png" width="150" alt="" class="logoimg "></span></a></h2>
 						</a>
 					</div>
 					
@@ -229,10 +230,10 @@ usu = (User) sesionOK.getAttribute("usuario");
 			<div id="responsive-nav">
 				<!-- category nav -->
 				<div class="category-nav show-on-click">
-					<span class="category-header">Categorias<i class="fa fa-list"></i></span>
+					<span class="category-header">Menu<i class="fa fa-list"></i></span>
 					<ul class="category-list">
 						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Laptops y Pc's <i class="fa fa-angle-right"></i></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Nuestras Marcas<i class="fa fa-angle-right"></i></a>
 							<div class="custom-menu">
 								<div class="row">
                                                                     <div class="col-md-6">
@@ -308,13 +309,14 @@ usu = (User) sesionOK.getAttribute("usuario");
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-                            <form id="checkout-form" class="clearfix" method="post" action="VentaC">
+                            <form id="checkout-form" class="clearfix" method="post" action="VentaC"/> 
+                            <!--action="VentaC">-->
 					<div class="col-md-6">
                                              
 						<div class="billing-details">
                                                      <%if(sesionOK.getAttribute("usuario")==null){
                                                                 %>
-							<p>¿Ya eres cliente? <a href="Login.jsp">Iniciar Sesion</a></p>
+							<p>ï¿½Ya eres cliente? <a href="Login.jsp">Iniciar Sesion</a></p>
 							<div class="section-title">
 								<h3 class="title">Detalle de factura</h3>
 							</div>
@@ -351,7 +353,9 @@ usu = (User) sesionOK.getAttribute("usuario");
 							<div class="form-group">
 								<input class="input" type="tel" name="ftelefono" placeholder="Telefono" required>
 							</div>
-							
+							<div class="form-group">
+                                                            <input class="input" id="prd" type="hidden" name="prd" placeholder="na" required>
+							</div>
 						</div>
 					</div>
 
@@ -387,7 +391,8 @@ usu = (User) sesionOK.getAttribute("usuario");
                                                                 <p>Debera pagar al momento de entregarle el pedido y presentar la factura</p>
 								</div>
 							</div>
-							
+							<% int n = 0; 
+							n = 1; %>
 						</div>
 					</div>
 
@@ -396,17 +401,21 @@ usu = (User) sesionOK.getAttribute("usuario");
 							<div class="section-title">
 								<h3 class="title">Revision del Producto</h3>
 							</div>
-							<table class="shopping-cart-table table">
+                                  
+                                 <table id="detalleVenta"  class="shopping-cart-table table">
+														
 								<thead>
 									<tr>
 										<th>Producto</th>
 										<th></th>
-										<th class="text-center">Pricio</th>
+										<th class="text-center">Precio</th>
 										<th class="text-center">Cantidad</th>
 										<th class="text-right"></th>
 									</tr>
 								</thead>
-								<tbody>
+						
+								<tbody  >
+									
 									<tr>
                                                                               <%                                                                                
                                                                                   for(Venta v : car){
@@ -414,29 +423,36 @@ usu = (User) sesionOK.getAttribute("usuario");
                                                                               %>
                                                                       
                                                                                     <td class="thumb"><img src="./img/<%=v.getProduct().getImagen()%>" alt=""></td>
-										<td class="details">
-											<a href="#"><%=v.getProduct().getNombre()%></a>
-											<ul>
-												<li><span>Color: <%=v.getProduct().getColor()%></span></li>
-											</ul>
+										
+																					<td class="details">
+											<p> <b><%=v.getProduct().getNombre()%></b><br>
+											<span>Color:
+												<%=v.getProduct().getColor()%>
+											</span>
+											</p>
 										</td>
 										<td class="price text-center"><strong>$<%=v.getProduct().getPrecio()%></strong><br></td>
-                                                                                <td class="qty text-center"><input class="input" type="text"  placeholder="<%=v.getCantidad_producto()%>" disabled="true"></td>
+                                                                                <td class="qty text-center">
+																					<p><b><%=v.getCantidad_producto()%></b></p>
+																					
+																				</td>
                                                                                 <input class="input" name="cantidad_v" type="hidden" value="<%=v.getCantidad_producto()%>" placeholder="<%=v.getCantidad_producto()%>">
-                                                                                <td class="qty text-center"><input class="input" name="producto_v" type="hidden" value="<%=v.getProduct().getId_producto()%>" ></td>
+																				<td class="qty text-center"><input class="input" name="producto_v" type="hidden" value="<%=v.getProduct().getId_producto()%>" >
+																				</td>
                                                                                 <input type="hidden" name="total" value="<%=total%>">
-                                                                                </form>
+																				</form>
+																				
                                                                                 <td class="text-right">
                                                                                     <form action="Car" method="post">
                                                                                         <input class="input" name="producto_v" type="hidden" value="<%=v.getProduct().getId_producto()%>" >
                                                                                          <input type="hidden" name="accion" value="eliminar_p">
                                                                                     <button type="submit" class="main-btn icon-btn"><i class="fa fa-close"></i></button>
                                                                                     </form>
-                                                                                </td>
+																				</td>
 									</tr>
 									<%  
                                                                           }
-                                                                        %>       
+                                                                        %> 
 								</tbody>
 								<tfoot>						
 									<tr>
@@ -446,9 +462,12 @@ usu = (User) sesionOK.getAttribute("usuario");
 									</tr>
 								</tfoot>
 							</table>
+                                                                        <%if(total!=0){%>
 							<div class="pull-right">
-								<button class="primary-btn">Realizar Pedido</button>
+								<button class="primary-btn" id="btnemail">Realizar Pedido</button>
 							</div>
+                                                        <%
+                                                        }%>
 						</div>
 
 					</div>
@@ -474,63 +493,37 @@ usu = (User) sesionOK.getAttribute("usuario");
 						<div class="footer-logo">
 						<a class="logo" href="#">
 						
-							<h2> <span><img src="img/biglaptop.png" alt="" class="logoimg "></span><span class="logo">Tech</span>-Shop</h2>
+							<h2> <a href="index.jsp"> <span><img src="img/logo 1.png" width="150" alt="" class="logoimg "></span></a></h2>
 						</a>
 						</div>
-						<!-- /footer logo -->
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-
-						<!-- footer social -->
-						<ul class="footer-social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-						</ul>
-						<!-- /footer social -->
+						<p>
+                                                    ShopGeek tu tienda online, Brindando los mejores Productos Tecnolï¿½gicos Para Nuestros Clientes.
+                                                    </p>
 					</div>
 				</div>
-				<!-- /footer widget -->
-
+                                <div class="col-md-3 col-sm-6 col-xs-6"></div>
 				<!-- footer widget -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Mi Cuenta</h3>
+						<h3 class="footer-header">Informaciones</h3>
 						<ul class="list-links">
-							<li><a href="#">Mi Cuenta</a></li>
+							
+                                                </ul> <br>
+                                                <ul class="list-links">
                                                          <%if(sesionOK.getAttribute("usuario")==null){
                                                                 %>
+                                                         <h3 class="footer-header">Mi Cuenta</h3>
 							<li><a href="Login.jsp">Login</a></li>
 						</ul>
-                                                        
                                                         <%}
-                                                        %>
-					</div>
-                                        
-				</div>
-				<!-- /footer widget -->
-
-				<div class="clearfix visible-sm visible-xs"></div>
-
-				<!-- footer widget -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Servicios</h3>
-						<ul class="list-links">
-							<li><a href="#">Sobre Nosotros</a></li>
-							<li><a href="#">Envio y Devolucion</a></li>
-							<li><a href="#">Guia de envio</a></li>
-							<li><a href="#">FAQ</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer widget -->
-
-				<!-- footer subscribe -->
-				
-				<!-- /footer subscribe -->
+                                                        %></div>
+                                                        <h1>Desarolladores</h1>
+                                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                                    <img src="img/carlitos.jpg" class="dev" width="50" height="50" alt="carlitos"/>
+                                                    <span>Carlos Montero Q.</span><br><br>
+                                                    <img src="img/orbis.jpg" class="dev" width="50" height="50" alt="carlitos"/>
+                                                     <span>Orbis Alonzo G.</span>
+						</div>      
+                                                   
 			</div>
 			<!-- /row -->
 			<hr>
@@ -540,7 +533,7 @@ usu = (User) sesionOK.getAttribute("usuario");
 					<!-- footer copyright -->
 					<div class="footer-copyright">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;<script>document.write(new Date().getFullYear());</script> Orbisalonzo@gmail.com <i class="fa fa-facebook" aria-hidden="true"></i></a>
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> ShopGeek.com
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</div>
 					<!-- /footer copyright -->
@@ -564,7 +557,10 @@ usu = (User) sesionOK.getAttribute("usuario");
         <script>
              $(document).ready(function () {
             $("#number").numeric();
+            $( "#btnemail" ).click(function() {
+              $("#prd").val($("#detalleVenta").html().toString());
             });
+            });            
         </script>
 </body>
 

@@ -75,10 +75,10 @@ public class UserImpl extends Conexion implements UserInter {
             props.setProperty("mail.smtp.host", "smtp.gmail.com");
             props.setProperty("mail.smtp.starttls.enable", "true");
             props.setProperty("mail.smtp.port", "587");
-            props.setProperty("mail.smtp.user", "orbisalonzo@gmail.com");
+            props.setProperty("mail.smtp.user", "orbisalonzo25@gmail.com");
             props.setProperty("mail.smtp.auth", "true");
             
-            String header = "Bienvenido a TechShop";
+            String header = "Bienvenido a ShopGeek";
  
             // Preparamos la sesion
             Session session = Session.getDefaultInstance(props);

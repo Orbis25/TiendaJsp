@@ -6,6 +6,7 @@
 
 
 
+<%@page import="java.io.PrintWriter"%>
 <%@page import="java.io.File"%>
 <%@page import="java.awt.*"%>
 <%@page import="org.apache.commons.fileupload.servlet.ServletFileUpload"%>
@@ -24,11 +25,14 @@ FileItemFactory file_factory = new DiskFileItemFactory();
         FileItem item = (FileItem) items.get(0);
         if(!item.isFormField()){
         File archivo_server = new File
-        ("C:\\Users\\orbis\\Documents\\NetBeansProjects\\Tienda\\web\\img\\"+item.getName());
+//        ("C:\\Users\\orbis\\Documents\\NetBeansProjects\\Tienda\\web\\img\\"+item.getName());
+          (request.getServletContext().getRealPath("/")+"img/"+item.getName());
             try {
                 item.write(archivo_server);
             } catch (Exception e) {
                 System.out.println("error al guardar img "+e);
+                        PrintWriter jp = response.getWriter();
+                        jp.print("error :" + e );
             }
             img =item.getName();
         }

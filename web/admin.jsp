@@ -68,9 +68,9 @@ if(sesionOk.getAttribute("admin")==null){
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-danger navbar-fixed-top" style="background: #f95959; color: white" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Admin</a>
+                <a class="navbar-brand" style="color: white" href="#">ShopGeek Admin</a>
             </div>
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -81,39 +81,12 @@ if(sesionOk.getAttribute("admin")==null){
             </button>
 
             <!-- Top Navigation: Left Menu -->
-            <ul class="nav navbar-nav navbar-left navbar-top-links">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-home fa-fw"></i> Website</a>
-                </li>
-            </ul>
-
+            
             <!-- Top Navigation: Right Menu -->
             <ul class="nav navbar-right navbar-top-links">
-                <li class="dropdown navbar-inverse">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> Mensajes
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>todos los mensajes</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" style="" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> 
                         
                         <%=n.getNombre()%>

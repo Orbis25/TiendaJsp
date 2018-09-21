@@ -14,12 +14,14 @@ import java.sql.SQLException;
  * @author orbis
  */
 public class Conexion {
-    
-    //arreglar
+      private final String url = "jdbc:mysql://localhost:3306/tienda";
+
    protected Connection con = null;
-   private final String url = "jdbc:mysql://localhost:3306/tienda";
+  // private final String url = "jdbc:mysql://node75020-shopgeek.whelastic.net:3306/tienda";
    private final String user ="root";
-   private final String pass = "";
+  //private final String pass = "SZVxro93136";
+      private final String pass = "";
+
    private final String clase = "com.mysql.jdbc.Driver";      
     public Connection getConnection(){
       try{

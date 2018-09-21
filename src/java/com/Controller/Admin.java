@@ -14,6 +14,7 @@ import com.Bean.Ram;
 import com.Bean.Sistema;
 import com.dao.AdminImpl;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -118,7 +119,6 @@ public class Admin extends HttpServlet {
         
         try{
         double precio2 = Double.valueOf( request.getParameter("precio"));
-        Sistema sistema =  new Sistema(request.getParameter("sistema"));
         Marca marca =  new Marca(Integer.parseInt(request.getParameter("marca")));
         Categoria categoria = new Categoria(Integer.parseInt(request.getParameter("categoria")));
         Procesador procesador = new Procesador(Integer.parseInt(request.getParameter("procesador")));
@@ -132,10 +132,12 @@ public class Admin extends HttpServlet {
         
         AdminImpl imp = new AdminImpl();
         imp.RegisterProducts(producto);
+                
         request.getRequestDispatcher("tableProducts.jsp").forward(request, response); 
             
         }catch(Exception e){
        
+            
             System.out.println("error en el castin del servlet "+e);
         
         }
@@ -146,9 +148,7 @@ public class Admin extends HttpServlet {
                 String up = request.getParameter("id");
                 int update = Integer.parseInt(up);
                 
-                double precio2 = Double.valueOf( request.getParameter("precio"));
-                
-                Sistema sistema =  new Sistema(request.getParameter("sistema"));
+                double precio2 = Double.valueOf( request.getParameter("precio"));              
                 Marca marca =  new Marca(Integer.parseInt(request.getParameter("marca")));
                 Categoria categoria = new Categoria(Integer.parseInt(request.getParameter("categoria")));
                 Procesador procesador = new Procesador(Integer.parseInt(request.getParameter("procesador")));

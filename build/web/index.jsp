@@ -1,4 +1,5 @@
 
+
 <%@page import="com.Bean.Venta"%>
 <%@page import="com.Bean.User"%>
 <%@page import="com.Bean.Categoria"%>
@@ -26,7 +27,7 @@ usu = (User) sesionOk.getAttribute("usuario");
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Tech-Shop</title>
+	<title>Shop-Geek</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -35,10 +36,8 @@ usu = (User) sesionOk.getAttribute("usuario");
 	<!-- Slick -->
 	<link type="text/css" rel="stylesheet" href="css/slick.css" />
 	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
-
 	<!-- nouislider -->
 	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
-
 	<!-- Font Awesome Icon -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 
@@ -55,7 +54,7 @@ usu = (User) sesionOk.getAttribute("usuario");
 		<div id="top-header">
 			<div class="container">
 				<div class="pull-left">
-					<span>Bienvenido a Tech-Shop!</span>
+					<span>Bienvenido a Shop-Geek!</span>
 				</div>
 				<div class="pull-right">
 					<ul class="header-top-links">
@@ -80,7 +79,7 @@ usu = (User) sesionOk.getAttribute("usuario");
 					<div class="header-logo">
 						<a class="logo" href="#">
 						
-							<h2> <span><img src="img/biglaptop.png" alt="" class="logoimg "></span><span class="logo">Tech</span>-Shop</h2>
+                                                    <h2> <a href="index.jsp"> <span><img src="img/logo 1.png" width="150" alt="" class="logoimg "></span></a></h2>
 						</a>
 					</div>
 					
@@ -105,13 +104,11 @@ usu = (User) sesionOk.getAttribute("usuario");
                                                                 <%if(sesionOk.getAttribute("usuario")!=null){
                                                                 %>
                                                                 <strong class="text-uppercase"><%=usu.getNombre()+""%> <%=usu.getApellido()%><i class="fa fa-caret-down"></i></strong>
-                                                                
-							</div>
+    							</div>
 							<ul class="custom-menu">
-								<!--<li><a href="#"><i class="fa fa-user-o"></i> Mi CUENTA</a></li>-->
+								
 								<li><a href="checkout.jsp"><i class="fa fa-check"></i> Checkout</a></li>
 								<li><a href="UserL?var=cerrar_sesion_user"><i class="fa fa-unlock-alt"></i>Cerrar Sesion</a></li>
-								<!--<li><a href="new_acount.jsp"><i class="fa fa-user-plus"></i> CREAR CUENTA</a></li>-->
 							</ul>
                                                                 <%
                                                                 }else{
@@ -205,10 +202,10 @@ usu = (User) sesionOk.getAttribute("usuario");
 			<div id="responsive-nav">
 				<!-- category nav -->
 				<div class="category-nav">
-					<span class="category-header">Categorias<i class="fa fa-list"></i></span>
+					<span class="category-header">Menu<i class="fa fa-list"></i></span>
 					<ul class="category-list">
 						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Laptops y Pc's <i class="fa fa-angle-right"></i></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Conoce nuestras marcas <i class="fa fa-angle-right"></i></a>
 							<div class="custom-menu">
 								<div class="row">
                                                                     <div class="col-md-6">
@@ -349,15 +346,9 @@ usu = (User) sesionOk.getAttribute("usuario");
                                             }
                                             %>
 					</div>
-                                        
 				</div>
-				<!-- /banner -->
-
-				<!-- Product Slick -->
 				<div class="col-md-9 col-sm-6 col-xs-6">
-                                    
 					<div class="row">
-                                           
 						<div id="product-slick-1" class="product-slick product-slick-1 ">
 							<!-- Product Single -->
                                                          <%
@@ -374,7 +365,6 @@ usu = (User) sesionOk.getAttribute("usuario");
                                                                             <input name="id_product_rand" type="hidden" value="<%=pr.getId_producto()%>">
                                                                             <input name="model_pc" type="hidden" value="<%=pr.getModelo_pc()%>">
 									  <input name="price_pc" type="hidden" value="<%=pr.getPrecio()%>">
-
                                                                             <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Ver Producto</button>
                                                                         </form>
                                                                         <img src="img/<%=pr.getImagen()%>" alt="">
@@ -383,51 +373,36 @@ usu = (User) sesionOk.getAttribute("usuario");
                                                                     <h3 class="product-price "><span>$</span><%=pr.getPrecio()%> </h3>
 									<h2 class="product-name text-center "><a href="#" ><%=pr.getNombre()%></a></h2>
 									<div class="product-btns">
-									
 									</div>
 								</div>
-                                                           
 							</div>
-							<!-- /Product Single -->
                                             <%
                                             }
                                             %>
 					</div>
                                         </div>
 				</div>
-				<!-- /Product Slick -->
 			</div>
-			<!-- /row -->
-
-			<!-- row -->
 			<div class="row">
-				<!-- section title -->
 				<div class="col-md-12">
 					<div class="section-title">
-                                            <h2 class="title" id="lonuevo">Nuestras Pc's</h2>
+                                            <h2 class="title" id="lonuevo">Otros productos</h2>
 						<div class="pull-right">
 							<div class="product-slick-dots-2 custom-dots">
-                                                          
 							</div>
 						</div>
 					</div>
 				</div>
                                </div>
-
 				<!-- section title -->
-
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="banner banner-2">
                                                   <%
-                                               
                                                ArrayList<Producto> ramdon1 = p.ProductRamdon1();
-                                               
                                                for(Producto pr: ramdon1){
-                                                 
                                                 %>
                                                 <img src="./img/<%=pr.getImagen()%>" alt="">
 						<div class="banner-caption">
-                                                   
 						</div>
                                                           <div class="product-body">      
 									<h2 class="text-info"><br><%=pr.getNombre()%></h2>
@@ -437,8 +412,7 @@ usu = (User) sesionOk.getAttribute("usuario");
                                                                         <input name="var" value="randon" type="hidden">
                                                                             <input name="id_product_rand" type="hidden" value="<%=pr.getId_producto()%>">
                                                                             <input name="model_pc" type="hidden" value="<%=pr.getModelo_pc()%>">
-                                                                           									  <input name="price_pc" type="hidden" value="<%=pr.getPrecio()%>">
-
+                                                                            <input name="price_pc" type="hidden" value="<%=pr.getPrecio()%>">
                                                                             <button type="submit" class="primary-btn btn-sm btn-block add-to-cart text-center">Ver Producto</button>
                                                                         </form>
                                                                         
@@ -469,8 +443,7 @@ usu = (User) sesionOk.getAttribute("usuario");
                                                                             <input name="var" value="randon" type="hidden">
                                                                             <input name="id_product_rand" type="hidden" value="<%=pr.getId_producto()%>">
                                                                             <input name="model_pc" type="hidden" value="<%=pr.getModelo_pc()%>">
-																		  <input name="price_pc" type="hidden" value="<%=pr.getPrecio()%>">
-
+									    <input name="price_pc" type="hidden" value="<%=pr.getPrecio()%>">
                                                                             <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Ver Producto</button>
                                                                         </form>
                                                                         <img src="img/<%=pr.getImagen()%>" >
@@ -509,7 +482,7 @@ usu = (User) sesionOk.getAttribute("usuario");
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
-			<div class="row">
+			<div class="row ">
 				<!-- footer widget -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
@@ -517,63 +490,36 @@ usu = (User) sesionOk.getAttribute("usuario");
 						<div class="footer-logo">
 						<a class="logo" href="#">
 						
-							<h2> <span><img src="img/biglaptop.png" alt="" class="logoimg "></span><span class="logo">Tech</span>-Shop</h2>
+							<h2> <span><img src="img/logo 1.png" width="200" alt="" class="logoimg "></span></h2>
 						</a>
 						</div>
 						<!-- /footer logo -->
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-
-						<!-- footer social -->
-						<ul class="footer-social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-						</ul>
-						<!-- /footer social -->
+						<p>ShopGeek tu tienda online, Brindando los mejores Productos Tecnológicos Para Nuestros Clientes.</p>
 					</div>
 				</div>
-				<!-- /footer widget -->
-
+				<div class="col-md-3 col-sm-6 col-xs-6"></div>
 				<!-- footer widget -->
 				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Mi Cuenta</h3>
+						<h3 class="footer-header">Informaciones</h3>
 						<ul class="list-links">
-							<li><a href="#">Mi Cuenta</a></li>
+							
+                                                </ul> <br>
+                                                <ul class="list-links">
                                                          <%if(sesionOk.getAttribute("usuario")==null){
                                                                 %>
+                                                         <h3 class="footer-header">Mi Cuenta</h3>
 							<li><a href="Login.jsp">Login</a></li>
 						</ul>
-                                                        
                                                         <%}
-                                                        %>
-					</div>
-                                        
-				</div>
-				<!-- /footer widget -->
-
-				<div class="clearfix visible-sm visible-xs"></div>
-
-				<!-- footer widget -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Servicios</h3>
-						<ul class="list-links">
-							<li><a href="#">Sobre Nosotros</a></li>
-							<li><a href="#">Envio y Devolucion</a></li>
-							<li><a href="#">Guia de envio</a></li>
-							<li><a href="#">FAQ</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer widget -->
-
-				<!-- footer subscribe -->
-				
-				<!-- /footer subscribe -->
+                                                        %></div>
+                                                        <h1>Desarolladores</h1>
+                                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                                    <img src="img/carlitos.jpg" class="dev" width="50" height="50" alt="carlitos"/>
+                                                    <span>Carlos Montero Q.</span><br><br>
+                                                    <img src="img/orbis.jpg" class="dev" width="50" height="50" alt="carlitos"/>
+                                                     <span>Orbis Alonzo G.</span>
+						</div>      
 			</div>
 			<!-- /row -->
 			<hr>
@@ -583,7 +529,7 @@ usu = (User) sesionOk.getAttribute("usuario");
 					<!-- footer copyright -->
 					<div class="footer-copyright">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;<script>document.write(new Date().getFullYear());</script> Orbisalonzo@gmail.com <i class="fa fa-facebook" aria-hidden="true"></i></a>
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> ShopGeek.com</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</div>
 					<!-- /footer copyright -->

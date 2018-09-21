@@ -16,7 +16,7 @@ public interface VentaInter {
     
     public boolean insertSaleUser(Venta venta,ArrayList<Venta> List);
     public boolean insertSaleNoUser(Venta venta,ArrayList<Venta> List);
-    public boolean emailSale(Venta venta);
+    public boolean emailSale(Venta venta , String products);
     public boolean queryFK();
     public boolean queryFK2();
     

@@ -71,10 +71,11 @@ n = (com.Bean.Admin) sesionOK.getAttribute("admin");
         <div id="wrapper">
     
             <!-- Navigation -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Admin</a>
-                </div>
+            <nav class="navbar navbar-danger navbar-fixed-top" style="background: #f95959; color: white" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color: white" href="#">ShopGeek Admin</a>
+            </div>
+
     
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -83,38 +84,11 @@ n = (com.Bean.Admin) sesionOK.getAttribute("admin");
                     <span class="icon-bar"></span>
                 </button>
     
-                <!-- Top Navigation: Left Menu -->
-                <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-home fa-fw"></i> Website</a>
-                    </li>
-                </ul>
+            
     
                 <!-- Top Navigation: Right Menu -->
                 <ul class="nav navbar-right navbar-top-links">
-                    <li class="dropdown navbar-inverse">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell fa-fw"></i>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-comment fa-fw"></i> Mensajes
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>todos los mensajes</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-user fa-fw"></i>                    
@@ -225,32 +199,7 @@ n = (com.Bean.Admin) sesionOK.getAttribute("admin");
                         <br>
                         <input type="text" name="modelo_pc" class="form-control " placeholder="modelo" required>
                         <br>
-                         <select class="form-control" name="sistema" required>
-                              <option value="" disabled selected>sistema</option>
-                            <%
-                               
-                            try{
-                              
-                               Connection con = cn.getConnection();
-                               String sql = "Select id_sistema,sistema from sistema";
-                               Statement st = con.createStatement();
-                               ResultSet rs = st.executeQuery(sql);
-                               while(rs.next()){
-                            %>
-                           
-                                
-                            <option value="<%=rs.getInt("id_sistema")%>"><%=rs.getString("sistema")%></option>;
-                              
-                            <%
-                             }
-                             }catch(Exception e){
-                         System.out.println("sistema"+e);
-                            }finally{
-                            cn.cerrar();
-                            }
-                            %>
-                             </select>
-                        <br>
+
                        <select class="form-control" name="categoria" required>
                               <option value="" disabled selected>categoria</option>
                             <%

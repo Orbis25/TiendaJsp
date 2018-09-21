@@ -35,6 +35,7 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
                             <form class="login100-form validate-form" method="POST" action="UserL">
 					<span class="login100-form-title p-b-49">
+                                            <h2> <span><img src="img/logo 1.png" width="150" alt="" class="logoimg mb-2"></span></h2>
 						Login
 					</span>
 
@@ -51,14 +52,12 @@
 					</div>
 					
 					<div class="text-right p-t-8 p-b-31">
-						<a href="#">
-							Olvidaste tu Contraseña?
-						</a>
+						
 					</div>
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn"
                                                      >
-							<div class="login100-form-bgbtn"></div>
+							<div class="login100-form-bgbtn" style="background: #f95959"></div>
 							<button type="submit" class="btn login100-form-btn" >Entrar</button>
 								
 							
